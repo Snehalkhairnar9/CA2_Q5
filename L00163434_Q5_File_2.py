@@ -16,10 +16,9 @@ def ssh_connection():
     ssh.connect(hostname='192.168.147.128', username='snehal', password='Snehal@9')
 
     stdin, stdout, stderr = ssh.exec_command('sudo apt-get install curl')  # unix command to install curl
-    stdin, stdout, stderr = ssh.exec_command('mkdir -p Labs/{Lab1,Lab2}')  # unix command create directory and subdirectory
-    stdin, stdout, stderr = ssh.exec_command('ls -l --time=atime > document.txt\n')  # unix command create
-    # directory
-    # and subdirectory
+    stdin, stdout, stderr = ssh.exec_command('mkdir -p Labs/{Lab1,Lab2}')  # unix command to create directory and subdirectories
+    stdin, stdout, stderr = ssh.exec_command('ls -l --time=atime > document.txt\n')  # unix command to find last access
+   
 
     print(stdout.readlines())
     ssh.close()
